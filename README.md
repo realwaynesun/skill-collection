@@ -33,7 +33,8 @@ Each skill should be a `.md` file with:
 ## Skills
 
 ### Coding
-<!-- Add your coding skills here -->
+
+- **[vibe-coding-workflow](skills/coding/vibe-coding-workflow.md)** - A structured workflow for building products from scratch with Claude Code. Covers planning, MVP execution, validation, UI polish, and deployment. *By waynesun, inspired by [@turingou](https://x.com/turingou)*
 
 ### Productivity
 <!-- Add your productivity skills here -->
