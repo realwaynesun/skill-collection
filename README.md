@@ -18,10 +18,26 @@ skill-collection/
 └── examples/            # Example skills and templates
 ```
 
-## Usage
+## Installation
 
-1. Copy a skill file to your Claude Code skills directory
-2. Invoke it using `/skill-name` in Claude Code
+Claude Code requires skills to be placed in a specific structure: a folder named after the skill containing a `SKILL.md` file. Skills in this repo use descriptive filenames for readability, so you'll need to rename them when installing.
+
+**To install a skill:**
+
+```bash
+# 1. Create a folder with your desired skill name
+mkdir -p ~/.claude/skills/vibe-coding
+
+# 2. Copy the skill file and rename to SKILL.md
+cp skills/coding/vibe-coding-workflow.md ~/.claude/skills/vibe-coding/SKILL.md
+```
+
+**Then invoke in Claude Code:**
+```
+/vibe-coding
+```
+
+> **Note:** The folder name becomes the command name. You can name it whatever you prefer.
 
 ## Adding a Skill
 
