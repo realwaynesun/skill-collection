@@ -14,7 +14,8 @@ skill-collection/
 │   ├── coding/          # Development and programming skills
 │   ├── productivity/    # Workflow and automation skills
 │   ├── documentation/   # Writing and docs skills
-│   └── data/            # Data analysis and processing skills
+│   ├── data/            # Data analysis and processing skills
+│   └── ui/              # UI and frontend development skills
 └── examples/            # Example skills and templates
 ```
 
@@ -60,6 +61,10 @@ Each skill should be a `.md` file with:
 
 ### Data
 <!-- Add your data skills here -->
+
+### UI
+
+- **[ui-skills](skills/ui/ui-skills.md)** - Opinionated constraints for building better interfaces with agents. Covers stack choices, components, interaction patterns, animation, typography, layout, performance, and design guidelines. *From [ui-skills.com](https://www.ui-skills.com/)*
 
 ## Contributing
 
