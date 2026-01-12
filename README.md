@@ -11,12 +11,9 @@ Skills are markdown files that provide Claude Code with specialized knowledge, w
 ```
 skill-collection/
 ├── skills/
-│   ├── coding/          # Development and programming skills
-│   ├── productivity/    # Workflow and automation skills
-│   ├── documentation/   # Writing and docs skills
-│   ├── data/            # Data analysis and processing skills
-│   └── ui/              # UI and frontend development skills
-└── examples/            # Example skills and templates
+│   ├── coding/     # Development and programming skills
+│   └── ui/         # UI and frontend development skills
+└── examples/       # Example skills and templates
 ```
 
 ## Installation
@@ -40,31 +37,29 @@ cp skills/coding/vibe-coding-workflow.md ~/.claude/skills/vibe-coding/SKILL.md
 
 > **Note:** The folder name becomes the command name. You can name it whatever you prefer.
 
-## Adding a Skill
-
-Each skill should be a `.md` file with:
-- Clear description of what it does
-- Instructions for Claude to follow
-- Any required context or examples
-
 ## Skills
 
 ### Coding
 
 - **[vibe-coding-workflow](skills/coding/vibe-coding-workflow.md)** - A structured workflow for building products from scratch with Claude Code. Covers planning, MVP execution, validation, UI polish, and deployment. *By waynesun, inspired by [@turingou](https://x.com/turingou)*
 
-### Productivity
-<!-- Add your productivity skills here -->
-
-### Documentation
-<!-- Add your documentation skills here -->
-
-### Data
-<!-- Add your data skills here -->
-
 ### UI
 
 - **[ui-skills](skills/ui/ui-skills.md)** - Opinionated constraints for building better interfaces with agents. Covers stack choices, components, interaction patterns, animation, typography, layout, performance, and design guidelines. *From [ui-skills.com](https://www.ui-skills.com/)*
+
+## Adding a Skill
+
+Create a `.md` file with YAML frontmatter:
+
+```yaml
+---
+name: skill-name
+description: Brief description of what this skill does
+author: your-name
+---
+```
+
+See [examples/skill-template.md](examples/skill-template.md) for a full template.
 
 ## Contributing
 
