@@ -4,52 +4,68 @@ A curated collection of Claude Code skills for extending Claude's capabilities.
 
 ## What are Skills?
 
-Skills are markdown files that provide Claude Code with specialized knowledge, workflows, or tool integrations. They can be invoked using `/skill-name` in Claude Code.
+Skills are markdown files that provide Claude Code with specialized knowledge, workflows, or tool integrations. They follow the standard Claude Code skill format with YAML frontmatter.
 
 ## Structure
 
 ```
 skill-collection/
-├── skills/
-│   ├── coding/     # Development and programming skills
-│   └── ui/         # UI and frontend development skills
-└── examples/       # Example skills and templates
+└── skills/
+    ├── vibe-coding/
+    │   └── SKILL.md      # Vibe coding workflow
+    ├── ui-skills/
+    │   └── SKILL.md      # UI development constraints
+    └── skill-template/
+        └── SKILL.md      # Template for creating new skills
 ```
 
 ## Installation
 
-Claude Code requires skills to be placed in a specific structure: a folder named after the skill containing a `SKILL.md` file. Skills in this repo use descriptive filenames for readability, so you'll need to rename them when installing.
-
-**To install a skill:**
+Copy any skill folder to your Claude Code skills directory:
 
 ```bash
-# 1. Create a folder with your desired skill name
-mkdir -p ~/.claude/skills/vibe-coding
+# Global installation (all projects)
+cp -r skills/vibe-coding ~/.claude/skills/
 
-# 2. Copy the skill file and rename to SKILL.md
-cp skills/coding/vibe-coding-workflow.md ~/.claude/skills/vibe-coding/SKILL.md
+# Project-specific installation
+cp -r skills/ui-skills /path/to/project/.claude/skills/
 ```
 
 **Then invoke in Claude Code:**
 ```
 /vibe-coding
+/ui-skills
 ```
-
-> **Note:** The folder name becomes the command name. You can name it whatever you prefer.
 
 ## Skills
 
-### Coding
+### vibe-coding
 
-- **[vibe-coding-workflow](skills/coding/vibe-coding-workflow.md)** - A structured workflow for building products from scratch with Claude Code. Covers planning, MVP execution, validation, UI polish, and deployment. *By waynesun, inspired by [@turingou](https://x.com/turingou)*
+A structured workflow for building products from scratch with Claude Code. Covers:
+- Phase 1: Initial Planning (`/plan` mode)
+- Phase 2: MVP Execution
+- Phase 3: MVP Validation
+- Phase 4: UI/UX Polish
+- Phase 5: Deployment
 
-### UI
+*By waynesun, inspired by [@turingou](https://x.com/turingou)*
 
-- **[ui-skills](skills/ui/ui-skills.md)** - Opinionated constraints for building better interfaces with agents. Covers stack choices, components, interaction patterns, animation, typography, layout, performance, and design guidelines. *From [ui-skills.com](https://www.ui-skills.com/)*
+### ui-skills
 
-## Adding a Skill
+Opinionated constraints for building better interfaces with agents. Covers:
+- Stack choices (Tailwind, motion/react, etc.)
+- Component primitives (Base UI, React Aria, Radix)
+- Interaction patterns
+- Animation guidelines
+- Typography & Layout
+- Performance & Design rules
 
-Create a `.md` file with YAML frontmatter:
+*From [ui-skills.com](https://www.ui-skills.com/)*
+
+## Creating a New Skill
+
+1. Create a folder: `skills/<skill-name>/`
+2. Add a `SKILL.md` file with YAML frontmatter:
 
 ```yaml
 ---
@@ -57,9 +73,23 @@ name: skill-name
 description: Brief description of what this skill does
 author: your-name
 ---
+
+# Skill Title
+
+Your skill instructions here...
 ```
 
-See [examples/skill-template.md](examples/skill-template.md) for a full template.
+See [skills/skill-template/SKILL.md](skills/skill-template/SKILL.md) for a full template.
+
+## YAML Frontmatter Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `name` | Yes | Skill identifier (lowercase-kebab-case) |
+| `description` | Yes | Brief description for Claude |
+| `author` | No | Creator's name |
+| `source` | No | Original source URL if adapted |
+| `inspired_by` | No | Credit for inspiration |
 
 ## Contributing
 
